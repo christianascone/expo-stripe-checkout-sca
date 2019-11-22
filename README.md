@@ -1,6 +1,6 @@
 # **:triangular_flag_on_post: EXPO-STRIPE-CHECKOUT-SCA**
 
-![project version](https://img.shields.io/badge/project-0.2.0-brightgreen.svg)
+![project version](https://img.shields.io/badge/project-0.3.0-brightgreen.svg)
 
 > A React Native Stripe Checkout WebView component compatible with Expo apps and SCA
 
@@ -52,7 +52,7 @@ yarn add expo-stripe-checkout-sca
 | **onClose** (required)                                                     | `function` |                       |
 | **onNavigationStateChange** (required)                                     | `function` |                       |
 | **modalVisible** (required)                                                | `boolean`  |                       |
-| style                                                                      | `ViewStyle`|                       |
+| webViewStyle                                                               | `ViewStyle`|                       |
 | closeButtonContainerStyle                                                  | `ViewStyle`|                       |
 | closeButtonInnerStyle                                                      | `TextStyle`|                       |
 
@@ -107,6 +107,8 @@ Feel free to open issues or submit pull-requests to help me improving my work.
 
 ### **:scroll: Release history**
 
+* 0.3.0
+    * UPDATE: Webview style with explicit property name and no more required
 * 0.2.0
     * ADD: Close button
 * 0.1.0
