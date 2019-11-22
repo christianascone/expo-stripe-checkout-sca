@@ -1,6 +1,6 @@
 # **:triangular_flag_on_post: EXPO-STRIPE-CHECKOUT-SCA**
 
-![project version](https://img.shields.io/badge/project-0.1.0-brightgreen.svg)
+![project version](https://img.shields.io/badge/project-0.2.0-brightgreen.svg)
 
 > A React Native Stripe Checkout WebView component compatible with Expo apps and SCA
 
