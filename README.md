@@ -53,6 +53,8 @@ yarn add expo-stripe-checkout-sca
 | **onNavigationStateChange** (required)                                     | `function` |                       |
 | **modalVisible** (required)                                                | `boolean`  |                       |
 | style                                                                      | `ViewStyle`|                       |
+| closeButtonContainerStyle                                                  | `ViewStyle`|                       |
+| closeButtonInnerStyle                                                      | `TextStyle`|                       |
 
 ```js
 /**
@@ -105,6 +107,8 @@ Feel free to open issues or submit pull-requests to help me improving my work.
 
 ### **:scroll: Release history**
 
+* 0.2.0
+    * ADD: Close button
 * 0.1.0
     * Work in progress
 

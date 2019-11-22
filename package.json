@@ -1,6 +1,6 @@
 {
   "name": "expo-stripe-checkout-sca",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A React Native Stripe Checkout WebView component compatible with Expo apps and SCA",
   "main": "index.tsx",
   "scripts": {
