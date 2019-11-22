@@ -8,7 +8,17 @@
  */
 
 import React, {Component} from 'react';
-import {Modal, Platform, WebView, StyleProp, ViewStyle} from 'react-native';
+import {
+    Modal,
+    Platform,
+    StyleProp,
+    StyleSheet,
+    Text,
+    TextStyle,
+    TouchableOpacity,
+    ViewStyle,
+    WebView
+} from 'react-native';
 
 interface StripeCheckoutScaProps {
     publicKey: string,
@@ -18,6 +28,8 @@ interface StripeCheckoutScaProps {
     onClose: () => void,
     onNavigationStateChange: (any) => void,
     modalVisible: boolean,
+    closeButtonContainerStyle?: StyleProp<ViewStyle>,
+    closeButtonInnerStyle?: StyleProp<TextStyle>,
 }
 
 class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
@@ -30,6 +42,8 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
             sessionId,
             onNavigationStateChange,
             modalVisible,
+            closeButtonContainerStyle,
+            closeButtonInnerStyle,
         } = this.props;
 
 
@@ -37,8 +51,15 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
             <Modal
                 animationType={'slide'}
                 visible={modalVisible}
-                transparent
-            >
+                transparent={false}
+                onRequestClose={() => {
+                    console.log('close modal')
+                }}>
+                <TouchableOpacity onPress={() => onClose()}
+                                  style={[styles.closeButtonOpacity, closeButtonContainerStyle]}>
+                    <Text
+                        style={[styles.closeButtonText, closeButtonInnerStyle]}>X</Text>
+                </TouchableOpacity>
                 <WebView
                     javaScriptEnabled={true}
                     scrollEnabled={false}
@@ -71,5 +92,26 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    closeButtonOpacity: {
+        width: 30, height: 30, backgroundColor: '#a1a1a1', shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+
+        elevation: 3,
+        marginTop: 5,
+        marginLeft: 5,
+    },
+    closeButtonText: {
+        fontSize: 20,
+        textAlign: 'center',
+        color: 'white',
+    },
+});
 
 export default StripeCheckoutSca;
