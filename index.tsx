@@ -22,7 +22,7 @@ import {
 
 interface StripeCheckoutScaProps {
     publicKey: string,
-    style: StyleProp<ViewStyle>,
+    webViewStyle?: StyleProp<ViewStyle>,
     sessionId: string,
     onPaymentSuccess: (string) => void,
     onClose: () => void,
@@ -36,7 +36,7 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
     render() {
         const {
             publicKey,
-            style,
+            webViewStyle,
             onPaymentSuccess,
             onClose,
             sessionId,
@@ -85,7 +85,7 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
                         baseUrl: ''
                     }}
                     onMessage={event => event.nativeEvent.data === 'WINDOW_CLOSED' ? onClose() : onPaymentSuccess(event.nativeEvent.data)}
-                    style={[{flex: 1}, style]}
+                    style={[{flex: 1}, webViewStyle]}
                     scalesPageToFit={Platform.OS === 'android'}
                 />
             </Modal>
