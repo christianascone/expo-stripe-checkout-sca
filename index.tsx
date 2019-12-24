@@ -9,16 +9,15 @@
 
 import React, {Component} from 'react';
 import {
-    Modal,
     Platform,
     StyleProp,
     StyleSheet,
     Text,
     TextStyle,
     TouchableOpacity,
-    ViewStyle,
-    WebView
+    ViewStyle
 } from 'react-native';
+import Import from './import';
 
 interface StripeCheckoutScaProps {
     publicKey: string,
@@ -46,7 +45,7 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
 
 
         return (
-            <Modal
+            <Import.Modal
                 animationType={'slide'}
                 visible={modalVisible}
                 transparent={false}
@@ -58,7 +57,7 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
                     <Text
                         style={[styles.closeButtonText, closeButtonInnerStyle]}>X</Text>
                 </TouchableOpacity>
-                <WebView
+                <Import.WebView
                     javaScriptEnabled={true}
                     scrollEnabled={false}
                     bounces={false}
@@ -86,7 +85,7 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
                     style={[{flex: 1}, webViewStyle]}
                     scalesPageToFit={Platform.OS === 'android'}
                 />
-            </Modal>
+            </Import.Modal>
         );
     }
 }

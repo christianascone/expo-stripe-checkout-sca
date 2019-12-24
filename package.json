@@ -38,6 +38,8 @@
   "contributors": [],
   "license": "MIT",
   "peerDependencies": {
-    "react-native": ">= 0.20.0"
+    "react-native": ">= 0.20.0",
+    "react-native-web-webview": "^0.2.8",
+    "modal-enhanced-react-native-web": "^0.2.0"
   }
 }
