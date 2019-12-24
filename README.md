@@ -1,6 +1,6 @@
 # **:triangular_flag_on_post: EXPO-STRIPE-CHECKOUT-SCA**
 
-![project version](https://img.shields.io/badge/project-0.3.0-brightgreen.svg)
+![project version](https://img.shields.io/badge/project-0.3.1-brightgreen.svg)
 
 > A React Native Stripe Checkout WebView component compatible with Expo apps and SCA
 
@@ -48,7 +48,6 @@ yarn add expo-stripe-checkout-sca
 | -------------------------------------------------------------------------- | ---------- | --------------------- |
 | **publicKey** (required)                                                   | `string`   |                       |
 | **sessionId** (required)                                                   | `string`   |                       |
-| **onPaymentSuccess** (required)                                            | `function` |                       |
 | **onClose** (required)                                                     | `function` |                       |
 | **onNavigationStateChange** (required)                                     | `function` |                       |
 | **modalVisible** (required)                                                | `boolean`  |                       |
@@ -72,7 +71,6 @@ render() {
   return <StripeCheckoutSca modalVisible={true}
     onClose={null}
     onNavigationStateChange={(e) => this.log(e)}
-    onPaymentSuccess={null}
     publicKey="pk_test_jr2LmM4cWdn3Q5vuFqgo5LMO"
     sessionId="cs_test_9pGYF9ZP3OBcOHVlKjDM0Bjw0k0wsqSQLxsagv3L05VImpbV1iZAzcG1"
   />
@@ -107,6 +105,8 @@ Feel free to open issues or submit pull-requests to help me improving my work.
 
 ### **:scroll: Release history**
 
+* 0.3.1
+    * UPDATE: Remove useless onPaymentSuccess parameter
 * 0.3.0
     * UPDATE: Webview style with explicit property name and no more required
 * 0.2.0

@@ -24,7 +24,6 @@ interface StripeCheckoutScaProps {
     publicKey: string,
     webViewStyle?: StyleProp<ViewStyle>,
     sessionId: string,
-    onPaymentSuccess: (string) => void,
     onClose: () => void,
     onNavigationStateChange: (any) => void,
     modalVisible: boolean,
@@ -37,7 +36,6 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
         const {
             publicKey,
             webViewStyle,
-            onPaymentSuccess,
             onClose,
             sessionId,
             onNavigationStateChange,
@@ -84,7 +82,7 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
                             </script>`,
                         baseUrl: ''
                     }}
-                    onMessage={event => event.nativeEvent.data === 'WINDOW_CLOSED' ? onClose() : onPaymentSuccess(event.nativeEvent.data)}
+                    onMessage={event => event.nativeEvent.data === 'WINDOW_CLOSED' ? onClose() : console.log('Event: ' + event.nativeEvent.data)}
                     style={[{flex: 1}, webViewStyle]}
                     scalesPageToFit={Platform.OS === 'android'}
                 />
