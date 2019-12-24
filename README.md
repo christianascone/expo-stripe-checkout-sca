@@ -48,7 +48,6 @@ yarn add expo-stripe-checkout-sca
 | -------------------------------------------------------------------------- | ---------- | --------------------- |
 | **publicKey** (required)                                                   | `string`   |                       |
 | **sessionId** (required)                                                   | `string`   |                       |
-| **onPaymentSuccess** (required)                                            | `function` |                       |
 | **onClose** (required)                                                     | `function` |                       |
 | **onNavigationStateChange** (required)                                     | `function` |                       |
 | **modalVisible** (required)                                                | `boolean`  |                       |
@@ -72,7 +71,6 @@ render() {
   return <StripeCheckoutSca modalVisible={true}
     onClose={null}
     onNavigationStateChange={(e) => this.log(e)}
-    onPaymentSuccess={null}
     publicKey="pk_test_jr2LmM4cWdn3Q5vuFqgo5LMO"
     sessionId="cs_test_9pGYF9ZP3OBcOHVlKjDM0Bjw0k0wsqSQLxsagv3L05VImpbV1iZAzcG1"
   />
