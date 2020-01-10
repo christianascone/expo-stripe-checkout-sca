@@ -61,6 +61,8 @@ class StripeCheckoutSca extends Component<StripeCheckoutScaProps, any> {
                     javaScriptEnabled={true}
                     scrollEnabled={false}
                     bounces={false}
+                    originWhitelist={["*"]}
+                    startInLoadingState={true}
                     onNavigationStateChange={(e) => onNavigationStateChange(e)}
                     source={{
                         html:
